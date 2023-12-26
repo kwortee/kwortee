@@ -1,0 +1,55 @@
+class TravelingSalesmanProblem {
+    constructor(cities) {
+        this.cities = cities;
+        this.populationSize = 100;
+        this.mutationRate = 0.015;
+        this.elitism = true;
+    }
+
+    generateRandomRoute() {
+        const route = this.cities.slice();
+        for (let i = route.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [route[i], route[j]] = [route[j], route[i]];
+        }
+        return route;
+    }
+
+    calculateDistance(route) {
+        // Calculate total distance of the route
+        // ... (implementation not shown for brevity)
+    }
+
+    crossover(parent1, parent2) {
+        // Perform crossover operation between two parents
+        // ... (implementation not shown for brevity)
+    }
+
+    mutate(route) {
+        // Perform mutation operation on a route
+        // ... (implementation not shown for brevity)
+    }
+
+    evolve() {
+        // Evolve the population over generations
+        // ... (implementation not shown for brevity)
+    }
+
+    findBestRoute() {
+        // Find the best route using genetic algorithm
+        // ... (implementation not shown for brevity)
+    }
+}
+
+// Example usage
+const cityCoordinates = [
+    { x: 0, y: 0 },
+    { x: 1, y: 2 },
+    { x: 4, y: 3 },
+    { x: 6, y: 1 },
+    // ... add more city coordinates
+];
+
+const tsp = new TravelingSalesmanProblem(cityCoordinates);
+const bestRoute = tsp.findBestRoute();
+console.log("Best Route:", bestRoute);
